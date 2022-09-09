@@ -38,6 +38,13 @@ class ArticlesController < ApplicationController # rubocop:disable Style/Documen
     end
   end
 
+
+  def destroy
+    @article = Article.find(params[:id])
+    @article.destroy
+    redirect_to articles_path, status: :see_other
+  end
+
   private
 
   def article_params
