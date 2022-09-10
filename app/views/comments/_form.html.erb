@@ -10,6 +10,11 @@
     <%= f.label :body %> <br>
     <%= f.text_field :body %>
   </p>
+
+  <p>
+    <%= f.label :status %><br>
+    <%= f.select :status, Comment::VALID_STATUSES, selected: 'public' %>
+  </p>
   <p>
     <%= f.submit %>
   </p>
